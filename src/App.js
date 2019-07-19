@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import firebase from './firebase';
+import Header from './components/Header';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import Register from './pages/Register';
+import NewPost from './pages/NewPost';
+import './global.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+    firebaseInit: false
+  };
+
+  componentDidMount() {
+    firebase.isInitialized().then(resultado => {
+      // devolve o usuario
+      this.setState({ firebaseInit: resultado });
+    });
+  }
+
+  render() {
+    return this.state.firebaseInit !== false ? (
+      <BrowserRouter>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/dashboard/new_post" component={NewPost} />
+        </Switch>
+      </BrowserRouter>
+    ) : (
+        <h1 className="loading"> Carregando...</h1>
+      );
+  }
 }
 
 export default App;

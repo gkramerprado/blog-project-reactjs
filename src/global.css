@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FAFAFA;
+  font: 14px sans-serif;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.loading {
+position: absolute;
+top: 50%;
+left: 50%;
+}
