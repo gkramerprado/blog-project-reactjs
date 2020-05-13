@@ -34,7 +34,7 @@ Example for yarn
 $ yarn install
 ```
 
-## Running the tests
+## Starting the Application
 
 To run the application, we will use the following command
 
