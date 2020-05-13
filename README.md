@@ -25,7 +25,7 @@ To install dependencies, use the commands below.
 Example for npm
 
 ```
-$ npm install --all
+$ npm install
 ```
 
 Example for yarn
