@@ -9,7 +9,7 @@ class Home extends Component {
     };
 
     componentDidMount() {
-        firebase.app.ref('posts').once("value", (snap) => {
+        firebase.app.ref('posts').on("value", (snap) => {
             let state = this.state;
 
             state.posts = [];
