@@ -2,7 +2,7 @@
 
 This project is for educational purposes only, practicing authentication concepts using the firebase's own functions and also applies concepts from Real Time systems, which will not be necessary to update the screen to update the information.
 
-Note that the database configuration is mine, if you want to use your own database on Firebase, just paste your configs on firebase.js file
+Note that the database configuration is mine, if you want to use your own database on Firebase, just overwrite the firebaseConfig variable with your configs on src/firebase.js file.
 
 ## Getting Started
 
