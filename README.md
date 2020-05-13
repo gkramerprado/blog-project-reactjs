@@ -25,7 +25,7 @@ To install dependencies, use the commands below.
 Example for npm
 
 ```
-$ npm install --all
+$ npm install
 ```
 
 Example for yarn
@@ -34,7 +34,7 @@ Example for yarn
 $ yarn install
 ```
 
-## Running the tests
+## Starting the Application
 
 To run the application, we will use the following command
 
