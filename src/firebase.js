@@ -1,16 +1,16 @@
-import app from 'firebase/app';
-import 'firebase/database';
-import 'firebase/auth';
-import 'firebase/storage';
+import app from 'firebase/compat/app';
+import 'firebase/compat/database';
+import 'firebase/compat/auth';
+import 'firebase/compat/storage';
 
 let firebaseConfig = {
-    apiKey: "AIzaSyBoO49etJyRt6H7EyIwWxPyQ_rZn_QCkUE",
-    authDomain: "reactapp-e0538.firebaseapp.com",
-    databaseURL: "https://reactapp-e0538.firebaseio.com",
-    projectId: "reactapp-e0538",
-    storageBucket: "reactapp-e0538.appspot.com",
-    messagingSenderId: "819188274860",
-    appId: "1:819188274860:web:2df3addf2a3e0fcd"
+    apiKey: 'AIzaSyBoO49etJyRt6H7EyIwWxPyQ_rZn_QCkUE',
+    authDomain: 'reactapp-e0538.firebaseapp.com',
+    databaseURL: 'https://reactapp-e0538.firebaseio.com',
+    projectId: 'reactapp-e0538',
+    storageBucket: 'reactapp-e0538.appspot.com',
+    messagingSenderId: '819188274860',
+    appId: '1:819188274860:web:2df3addf2a3e0fcd',
 };
 
 class Firebase {
@@ -35,9 +35,9 @@ class Firebase {
     }
 
     isInitialized() {
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
             app.auth().onAuthStateChanged(resolve);
-        })
+        });
     }
 
     getCurrent() {
@@ -59,7 +59,12 @@ class Firebase {
 
         const uid = app.auth().currentUser.uid;
 
-        await app.database().ref('usuarios').child(uid).once('value').then(callback);
+        await app
+            .database()
+            .ref('usuarios')
+            .child(uid)
+            .once('value')
+            .then(callback);
     }
 }
 
